@@ -16,6 +16,7 @@ export default class SignInScreen extends React.Component {
 
         this.state = {
             username: '',
+            email: '',
             password: ''
         }
     }
@@ -25,10 +26,14 @@ export default class SignInScreen extends React.Component {
         return (
             <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
                 <View style={styles.container}>
-                    <Text style={styles.header}>- LOGIN -</Text>
+                    <Text style={styles.header}>- Register -</Text>
                     <TextInput
                         style={styles.textInput} placeholder="Username"
                         onChangeText={(username) => this.setState({ username })}
+                        underlineColorAndroid='transparent' />
+                    <TextInput
+                        style={styles.textInput} placeholder="E-mail"
+                        onChangeText={(email) => this.setState({ email })}
                         underlineColorAndroid='transparent' />
 
                     <TextInput
@@ -38,8 +43,8 @@ export default class SignInScreen extends React.Component {
 
                     <TouchableOpacity
                         style={styles.btn}
-                        onPress={this.login}>
-                        <Text>Log in</Text>
+                        onPress={this.register}>
+                        <Text>Register</Text>
                     </TouchableOpacity>
 
                 </View>
@@ -47,8 +52,9 @@ export default class SignInScreen extends React.Component {
         );
     }
 
-    login = () => {
-        console.log('Login button')
+    register = () => {
+        console.log('Send register requiest')
+        // Your code goes here ..
 
     }
 }

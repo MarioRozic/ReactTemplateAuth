@@ -45,6 +45,12 @@ export default class SignInScreen extends React.Component {
                     >
                         <Text>Log in</Text>
                     </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.btnRegister}
+                        onPress={this.register}
+                    >
+                        <Text style={styles.register}>Register</Text>
+                    </TouchableOpacity>
 
                 </View>
             </KeyboardAvoidingView >
@@ -54,8 +60,12 @@ export default class SignInScreen extends React.Component {
     login = () => {
         onSignIn(this.state)
             .then(res => {
-                console.log(res);
+                this.props.navigation.navigate("SignedIn");
             })
+    }
+
+    register = () => {
+        this.props.navigation.navigate("Register");
     }
 }
 
@@ -89,5 +99,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#01c853',
         padding: 20,
         alignItems: 'center'
+    },
+    btnRegister: {
+        alignSelf: 'stretch',
+        backgroundColor: 'transparent',
+        padding: 15,
+        alignItems: 'center'
+    },
+    register: {
+        fontSize: 14,
+        marginBottom: 60,
+        color: '#fff',
     },
 })
