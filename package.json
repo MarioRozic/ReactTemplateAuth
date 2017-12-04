@@ -19,8 +19,14 @@
     "flow-bin": "0.53.0",
     "jest-expo": "^22.0.0"
   },
+  "keywords": [
+    "react-native",
+    "react",
+    "template",
+    "auth"
+  ],
   "name": "authTabProject",
   "version": "0.0.0",
-  "description": "Hello Expo!",
+  "description": "Hello Expo! Simple template for RN apps",
   "author": "Mario Rozic"
 }
